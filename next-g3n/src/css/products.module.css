@@ -1,0 +1,53 @@
+/* @font-face {
+	font-family: goku-font;
+	src: url("../fonts/Feathergraphy_Clean.ttf");
+} */
+
+.product {
+	color: white;
+	height: auto;
+	position: relative;
+	display: flex;
+	gap: 70px;
+	overflow: hidden;
+	margin-top: 70px;
+	width: 100%;
+	aspect-ratio: 2400/860;
+	text-decoration: none;
+}
+
+.product:first-of-type {
+	margin-top: 0px;
+}
+
+.imgBox {
+	width: 50%;
+	height: auto;
+	/* background-image: url("../images/goku_website.png"); */
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.textBox {
+	width: 50%;
+	height: 100%;
+}
+
+.productTitle {
+	padding-left: 30px;
+	font-size: 50px;
+	font-family: "goku-font";
+}
+
+.productDescription {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product:nth-of-type(2n) {
+	flex-direction: row-reverse;
+}
+
+.product:nth-of-type(2n) .textBox {
+	/* flex-direction: row-reverse; */
+	text-align: right;
+}

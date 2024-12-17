@@ -1,0 +1,42 @@
+html,
+body {
+	background-color: rgba(0, 0, 0, 100);
+	color: white;
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+  }
+
+.background-lines {
+	--w: 1.1px; /* Thiclness of the line */
+	--n: 5; /* number of lines */
+
+	background: linear-gradient(
+		90deg,
+		#000000 calc(100% - var(--w)),
+		rgb(139, 139, 142) 0
+	);
+	background-size: calc(
+			(100% - var(--n) * var(--w)) / (var(--n) + 1) + var(--w)
+		)
+		100%;
+}
+
+#content {
+	margin: auto;
+	min-height: 80vh;
+	width: 70%;
+	padding: 50px;
+}
+
+Footer {
+	width: 100%;
+	height: 200px;
+	background-color: black;
+	border-top: 0.6px solid red;
+}
