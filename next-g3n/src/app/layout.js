@@ -1,4 +1,6 @@
 import "../css/style.css";
+import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 export const metadata = {
 	title: "NEXT G3N",
@@ -18,7 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className="backgroundLines">
+				<img
+					src={null}
+					className="headerImage"
+					style={{ backgroundColor: "darkorange" }}
+				></img>
+				<Navbar></Navbar>
+				<div className="content">{children}</div>
+				<Footer></Footer>
+			</body>
 		</html>
 	);
 }

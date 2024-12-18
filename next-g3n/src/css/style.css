@@ -1,18 +1,18 @@
 html,
 body {
 	background-color: rgba(0, 0, 0, 100);
-	color: white;
 	max-width: 100vw;
 	overflow-x: hidden;
 }
 
 * {
+	color: white;
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-  }
+}
 
-.background-lines {
+.backgroundLines {
 	--w: 1.1px; /* Thiclness of the line */
 	--n: 5; /* number of lines */
 
@@ -27,16 +27,9 @@ body {
 		100%;
 }
 
-#content {
+.content {
 	margin: auto;
 	min-height: 80vh;
 	width: 70%;
 	padding: 50px;
-}
-
-Footer {
-	width: 100%;
-	height: 200px;
-	background-color: black;
-	border-top: 0.6px solid red;
 }

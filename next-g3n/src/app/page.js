@@ -1,16 +1,44 @@
-import styles from "../css/page.module.css";
-import { Footer } from "./footer";
-import { Header } from "./header";
-import { Product } from "./product";
+import Link from "next/link";
+import styles from "./page.module.css";
+import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+	const data = await fetch("http://localhost:8081/products");
+	const products = await data.json();
+
 	return (
 		<section>
-			<Header></Header>
-			<div className={styles.content}>
-				<Product></Product>
-			</div>
-			<Footer></Footer>
+			{products.map((product) => (
+				<Link
+					key={product.id}
+					href={"product/" + product.id}
+					className={styles.product}
+				>
+					<Image
+						className={styles.imgBox}
+						src={"/" + product.image}
+						width={1200}
+						height={860}
+						alt="goku jacket"
+					></Image>
+					<div className={styles.textBox}>
+						<div
+							className={styles.productTitle}
+							style={{ color: "rgb(" + product.mainColor + ")" }}
+						>
+							{product.title}
+						</div>
+						<div
+							className={styles.productDescription}
+							style={{
+								color: "rgb(" + product.secondColor + ")",
+							}}
+						>
+							{product.description}
+						</div>
+					</div>
+				</Link>
+			))}
 		</section>
 	);
 }
