@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 					className="headerImage"
 					style={{ backgroundColor: "darkorange" }}
 				></img>
-				<Navbar></Navbar>
+				<Navbar sticky="top" />
 				<div className="content">{children}</div>
 				<Footer></Footer>
 			</body>

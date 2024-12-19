@@ -7,7 +7,7 @@ export default async function Home() {
 	const products = await data.json();
 
 	return (
-		<section>
+		<section className={styles.wrapper}>
 			{products.map((product) => (
 				<Link
 					key={product.id}
@@ -36,6 +36,9 @@ export default async function Home() {
 						>
 							{product.description}
 						</div>
+						<button className={styles.productButton}>
+							Go to product
+						</button>
 					</div>
 				</Link>
 			))}

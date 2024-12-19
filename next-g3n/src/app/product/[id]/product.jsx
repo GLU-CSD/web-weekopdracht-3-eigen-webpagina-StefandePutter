@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { productStyle } from "./product.module.css";
+import productStyles from "./product.module.css";
 import { useEffect, useState } from "react";
 
 export function Product() {
@@ -19,10 +19,28 @@ export function Product() {
 			.catch((error) => console.log(error));
 	}, []);
 
+	console.log(product);
+
+	if (!product.id) {
+		// throw new Error("No Product found");
+	}
+
 	return (
-		<div>
-			{product.id + " " + product.title + " " + product.price + " "}
-			{product.isSold ? "Sold" : "In supply"}
-		</div>
+		<table>
+			<tbody className={productStyles.table}>
+				<tr>
+					<th>id</th>
+					<th>title</th>
+					<th>price</th>
+					<th>sold</th>
+				</tr>
+				<tr>
+					<td>{product.id}</td>
+					<td>{product.title}</td>
+					<td>{product.price}</td>
+					<td>{product.isSold ? "Sold" : "In supply"}</td>
+				</tr>
+			</tbody>
+		</table>
 	);
 }

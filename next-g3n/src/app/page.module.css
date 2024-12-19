@@ -3,17 +3,22 @@
 	src: url("/fonts/Feathergraphy_Clean.ttf");
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
 .product {
 	color: white;
 	height: auto;
 	position: relative;
 	display: flex;
-	gap: 70px;
+	gap: 5%;
 	overflow: hidden;
 	margin-top: 70px;
 	width: 100%;
-	aspect-ratio: 2400/860;
 	text-decoration: none;
+	aspect-ratio: 2400/860;
 }
 
 .product:first-of-type {
@@ -31,16 +36,31 @@
 .textBox {
 	width: 50%;
 	height: 100%;
+	display: grid;
 }
 
 .productTitle {
 	padding-left: 30px;
 	font-size: 50px;
 	font-family: "goku-font";
+	height: auto;
 }
 
 .productDescription {
 	background-color: rgba(0, 0, 0, 0.5);
+	min-height: 100px;
+	overflow: hidden;
+}
+
+.productButton {
+	margin-top: 10px;
+	margin-right: 10%;
+	margin-left: 10%;
+	height: 10%;
+	max-height: 45px;
+	min-height: 40px;
+	background-color: black;
+	border: solid 2px white;
 }
 
 .product:nth-of-type(2n) {
@@ -50,4 +70,26 @@
 .product:nth-of-type(2n) .textBox {
 	/* flex-direction: row-reverse; */
 	text-align: right;
+}
+
+@media only screen and (max-width: 700px) {
+	.product {
+		flex-direction: column !important;
+		align-items: center !important;
+		gap: 0;
+		aspect-ratio: 0;
+	}
+
+	.imgBox {
+		width: 90%;
+	}
+
+	.textBox {
+		text-align: left !important;
+		width: 90%;
+	}
+
+	.productTitle {
+		text-align: center !important;
+	}
 }
