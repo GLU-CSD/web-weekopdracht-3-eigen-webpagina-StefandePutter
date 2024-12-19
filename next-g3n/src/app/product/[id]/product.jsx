@@ -9,7 +9,7 @@ export function Product() {
 	const [product, setProduct] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:8081/products")
+		fetch("http://127.0.0.1:8081/products")
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
@@ -29,15 +29,22 @@ export function Product() {
 		<table>
 			<tbody className={productStyles.table}>
 				<tr>
-					<th>id</th>
-					<th>title</th>
-					<th>price</th>
-					<th>sold</th>
+					<th>Id</th>
+					<th>Title</th>
+					<th>Price</th>
+					<th>Stock</th>
 				</tr>
 				<tr>
 					<td>{product.id}</td>
 					<td>{product.title}</td>
-					<td>{product.price}</td>
+					{
+						(product.price % 1 ==0) ? (
+
+							<td>{"€"+product.price+",-"}</td>
+						) : (
+							<td>{"€"+(product.price).toFixed(2)}</td>
+						)
+					}
 					<td>{product.isSold ? "Sold" : "In supply"}</td>
 				</tr>
 			</tbody>

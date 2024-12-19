@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 
 export default async function Home() {
-	const data = await fetch("http://localhost:8081/products");
+	const data = await fetch("http://127.0.0.1:8081/products");
 	const products = await data.json();
 
 	return (
@@ -36,9 +36,7 @@ export default async function Home() {
 						>
 							{product.description}
 						</div>
-						<button className={styles.productButton}>
-							Go to product
-						</button>
+						<button className={styles.productButton}>Go to product</button>
 					</div>
 				</Link>
 			))}
