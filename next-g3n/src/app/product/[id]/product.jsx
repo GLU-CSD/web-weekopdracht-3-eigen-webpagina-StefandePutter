@@ -38,11 +38,11 @@ export function Product() {
 					<td>{product.id}</td>
 					<td>{product.title}</td>
 					{
-						(product.price % 1 ==0) ? (
+						(product.price % 1 == 0) ? (
 
 							<td>{"€"+product.price+",-"}</td>
 						) : (
-							<td>{"€"+(product.price).toFixed(2)}</td>
+							<td>{"€"+(product.price)}</td>
 						)
 					}
 					<td>{product.isSold ? "Sold" : "In supply"}</td>
