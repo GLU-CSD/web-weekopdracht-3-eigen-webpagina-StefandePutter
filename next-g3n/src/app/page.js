@@ -11,14 +11,16 @@ export default async function Home() {
 			{products.map((product) => (
 				<Link
 					key={product.id}
-					href={"product/" + product.id}
+					href={"/product/" + product.id}
 					className={styles.product}
 				>
 					<Image
 						className={styles.imgBox}
-						src={"/" + product.image}
+						src={"/next-g3n/" + product.image}
+						loading="eager"
 						width={1200}
 						height={860}
+						unoptimized={true}
 						alt="goku jacket"
 					></Image>
 					<div className={styles.textBox}>
