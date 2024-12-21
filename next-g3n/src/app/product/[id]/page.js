@@ -5,9 +5,13 @@ function Fallback({ error }) {
 	return (
 		<section role="alert">
 			<p>Product not found</p>
-			<pre>error.message</pre>
+			<pre>{error}</pre>
 		</section>
 	);
+}
+
+export function generateStaticParams() {
+	return [{ id: '1' }, { id: '2' }]
 }
 
 export default function Home() {
