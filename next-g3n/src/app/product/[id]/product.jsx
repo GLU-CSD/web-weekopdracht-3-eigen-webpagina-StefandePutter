@@ -9,7 +9,7 @@ export function Product() {
 	const [product, setProduct] = useState([]);
 
 	useEffect(() => {
-		fetch("http://127.0.0.1:8081/products")
+		fetch('/next-g3n/result_data.json')
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
@@ -45,7 +45,7 @@ export function Product() {
 							<td>{"€"+(product.price)}</td>
 						)
 					}
-					<td>{product.isSold ? "Sold" : "In supply"}</td>
+					<td>{parseInt(product.isSold) ? "Sold" : "In supply"}</td>
 				</tr>
 			</tbody>
 		</table>

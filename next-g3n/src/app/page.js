@@ -1,10 +1,28 @@
+"use client"
+
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default async function Home() {
-	const data = await fetch("http://127.0.0.1:8081/products");
-	const products = await data.json();
+export default function Home() {
+	// const data = await fetch('/next-g3n/public/result_data.json')
+	// const products = await data.json();
+
+	const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    // If you're using Create React App and the file is in the public folder
+    fetch('/next-g3n/result_data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => setProduct(data))
+      .catch(error => console.error('There has been a problem with your fetch operation:', error));
+  }, []);
 
 	return (
 		<section className={styles.wrapper}>
