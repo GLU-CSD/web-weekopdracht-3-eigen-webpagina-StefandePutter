@@ -10,6 +10,8 @@
 
 .product {
 	color: white;
+	background: none;
+	border: none;
 	height: auto;
 	position: relative;
 	display: flex;
