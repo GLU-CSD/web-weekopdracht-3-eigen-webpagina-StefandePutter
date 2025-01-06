@@ -1,8 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import productStyles from "./product.module.css";
-import { useEffect, useState } from "react";
 
 export function Product(product) {
     product = product.product;
